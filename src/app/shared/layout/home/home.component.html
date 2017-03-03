@@ -1,3 +1,9 @@
 <p>
   home works!
 </p>
+
+<ul class="aplicaciones">
+  <li *ngFor="let aplicacion of aplicaciones">
+    <span>{{aplicacion.id}} {{aplicacion.nombre}}</span> 
+  </li>
+</ul>

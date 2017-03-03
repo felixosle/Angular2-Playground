@@ -1,15 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import {AplicacionService} from '../../../aplicacion.service';
+import {Aplicacion} from '../../../aplicacion';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers: [AplicacionService]
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private aplicacionService: AplicacionService) { }
+  
+  aplicaciones: Aplicacion[];
 
-  ngOnInit() {
+  getAplicaciones(): void{
+   this.aplicaciones= this.aplicacionService.getAplicaciones();
+  }
+
+  ngOnInit() { 
+    this.getAplicaciones();
   }
 
 }

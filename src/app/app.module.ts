@@ -14,7 +14,7 @@ import { Contenido1Component } from './contenido1/contenido1.component';
 import { Contenido2Component } from './contenido2/contenido2.component';
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 
-
+import {AplicacionService} from './aplicacion.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,7 @@ import { BienvenidaComponent } from './bienvenida/bienvenida.component';
     HttpModule,
     routing
   ],
-  providers: [],
+  providers: [AplicacionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
