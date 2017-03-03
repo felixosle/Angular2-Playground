@@ -9,6 +9,9 @@ import { PieComponent } from './shared/layout/pie/pie.component';
 import { CabeceraComponent } from './shared/layout/cabecera/cabecera.component';
 import { MenuComponent } from './shared/layout/menu/menu.component';
 import { HomeComponent } from './shared/layout/home/home.component';
+import { Contenido1Component } from './contenido1/contenido1.component';
+import { Contenido2Component } from './contenido2/contenido2.component';
+import { routing } from './app.routes';
 
 
 
@@ -18,12 +21,15 @@ import { HomeComponent } from './shared/layout/home/home.component';
     PieComponent,
     CabeceraComponent,
     MenuComponent,
-    HomeComponent
+    HomeComponent,
+    Contenido1Component,
+    Contenido2Component
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
