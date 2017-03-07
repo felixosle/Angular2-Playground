@@ -15,7 +15,8 @@ export class HomeComponent implements OnInit {
   aplicaciones: Aplicacion[];
 
   getAplicaciones(): void{
-   this.aplicaciones= this.aplicacionService.getAplicaciones();
+    this.aplicacionService.getAplicaciones()
+        .subscribe(aplicaciones => this.aplicaciones = aplicaciones);
   }
 
   ngOnInit() { 
