@@ -11,11 +11,13 @@ import {APLICACIONES} from './mock-aplicaciones';
 export class AplicacionService {
   constructor() { }
   
-  private aplicacionSeleccionadaBehSubject=new BehaviorSubject<number>(1);
+  aplicacionSeleccionada: Aplicacion= { id: 1, nombre: 'SICAS', version:'214_185_198', icono:'sicas', menu:['opcion1', 'opcion2', 'opcion3'] };
+  private aplicacionSeleccionadaBehSubject=new BehaviorSubject<Aplicacion>(this.aplicacionSeleccionada);
   public aplicacionSeleccionadaObs=this.aplicacionSeleccionadaBehSubject.asObservable();
-
-  setAplicacion(number){
-    this.aplicacionSeleccionadaBehSubject.next(2);
+  
+  
+  setAplicacion(Aplicacion){
+    this.aplicacionSeleccionadaBehSubject.next(this.aplicacionSeleccionada);
   }
 
   getAplicaciones(){
@@ -25,8 +27,8 @@ export class AplicacionService {
   }
 
   getAplicacion(id:number){
-    let aplicacionSeleccionada: Aplicacion= { id: 1, nombre: 'SICAS', version:'214_185_198', icono:'sicas', menu:['opcion1', 'opcion2', 'opcion3'] };
-    return aplicacionSeleccionada;
+    
+    return this.aplicacionSeleccionada;
     /*
       Observable.create(observer=>{
       observer.next(APLICACIONES.find((aplicacion)=>aplicacion.id == id));
