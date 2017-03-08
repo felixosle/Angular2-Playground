@@ -1,12 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import * as Rx from 'rxjs';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+
 import {Aplicacion} from './aplicacion';
 import {APLICACIONES} from './mock-aplicaciones';
 
+
 @Injectable()
 export class AplicacionService {
-    
+  constructor() { }
+  
+  aplicacionSeleccionadaBS=new BehaviorSubject<number>(1);
+
+  setAplicacion(number){
+    this.aplicacionSeleccionadaBS.next(2);
+  }
+
   getAplicaciones(){
       return Observable.create(observer => {
       observer.next(APLICACIONES);
@@ -23,6 +33,6 @@ export class AplicacionService {
     */
   }
   
-  constructor() { }
+
 
 }
