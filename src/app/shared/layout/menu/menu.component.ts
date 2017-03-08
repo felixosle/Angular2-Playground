@@ -14,7 +14,7 @@ export class MenuComponent implements OnInit {
   
   aplicaciones: Aplicacion[];
   aplicacionSeleccionada: Aplicacion=this.aplicacionService.getAplicacion(1);
-  aplicacionSeleccionadaBehSubject= this.aplicacionService.aplicacionSeleccionadaBehSubject;
+  aplicacionSeleccionadaObs= this.aplicacionService.aplicacionSeleccionadaObs;
 
   getAplicaciones(): void{
     this.aplicacionService.getAplicaciones()

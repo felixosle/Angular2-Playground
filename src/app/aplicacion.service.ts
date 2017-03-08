@@ -11,7 +11,8 @@ import {APLICACIONES} from './mock-aplicaciones';
 export class AplicacionService {
   constructor() { }
   
-  aplicacionSeleccionadaBehSubject=new BehaviorSubject<number>(1);
+  private aplicacionSeleccionadaBehSubject=new BehaviorSubject<number>(1);
+  public aplicacionSeleccionadaObs=this.aplicacionSeleccionadaBehSubject.asObservable();
 
   setAplicacion(number){
     this.aplicacionSeleccionadaBehSubject.next(2);
