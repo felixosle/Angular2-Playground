@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 import {AplicacionService} from '../../../aplicacion.service';
 import {Aplicacion} from '../../../aplicacion';
 
@@ -14,7 +14,7 @@ export class MenuComponent implements OnInit {
   
   aplicaciones: Aplicacion[];
   aplicacionSeleccionada: Aplicacion=this.aplicacionService.getAplicacion(1);
-  aplicacionSeleccionadaBS= this.aplicacionService.aplicacionSeleccionadaBS;
+  aplicacionSeleccionadaBehSubject= this.aplicacionService.aplicacionSeleccionadaBehSubject;
 
   getAplicaciones(): void{
     this.aplicacionService.getAplicaciones()

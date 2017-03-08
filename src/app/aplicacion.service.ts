@@ -11,10 +11,10 @@ import {APLICACIONES} from './mock-aplicaciones';
 export class AplicacionService {
   constructor() { }
   
-  aplicacionSeleccionadaBS=new BehaviorSubject<number>(1);
+  aplicacionSeleccionadaBehSubject=new BehaviorSubject<number>(1);
 
   setAplicacion(number){
-    this.aplicacionSeleccionadaBS.next(2);
+    this.aplicacionSeleccionadaBehSubject.next(2);
   }
 
   getAplicaciones(){
