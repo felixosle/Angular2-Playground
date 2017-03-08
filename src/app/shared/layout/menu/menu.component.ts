@@ -13,11 +13,13 @@ export class MenuComponent implements OnInit {
   constructor(private aplicacionService: AplicacionService) { }
   
   aplicaciones: Aplicacion[];
-
+  
   getAplicaciones(): void{
     this.aplicacionService.getAplicaciones()
         .subscribe(aplicaciones => this.aplicaciones = aplicaciones);
   }
+  
+  aplicacionSeleccionada: Aplicacion=this.aplicacionService.getAplicacion(1);
 
   ngOnInit() { 
     this.getAplicaciones();
